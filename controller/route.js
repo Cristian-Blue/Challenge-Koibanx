@@ -11,7 +11,6 @@ async function search  (req) {
           {"$limit" : page + limit | 1000},
           { "$sort" : (sort) ? sort : { "_id" : 1 } }
         ];
-        console.log(arrayConsult);
         arrayCount = {};
         if(q){
           arrayConsult.push( {"$match":   JSON.parse(q) });
