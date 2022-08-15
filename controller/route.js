@@ -39,7 +39,7 @@ async function search  (req) {
         "total": data.length
       };
     });
-    b.pages = conteo;
+    b.pages = Math.ceil(conteo / (limit|1000));
     return b;
 }
 
