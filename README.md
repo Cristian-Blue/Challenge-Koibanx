@@ -8,3 +8,5 @@ Se agrega al contenido del packete express-basic-auth , jest y super test.
 ## Consideraciones
 
 Se establece un archivo seeder.js para rellenar las stores en la base de datos, además se cambia el password de la autenticación auth-basic para que coincida con la información presentada en en la prueba. 
+
+la información que devuelve en el api/stores va con los keys vistos en la tabla del b.
