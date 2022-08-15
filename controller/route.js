@@ -9,9 +9,9 @@ async function search  (req) {
 
         arrayConsult = [
           {"$limit" : page + limit | 1000},
-          { "$sort" : (sort) ? sort : { "_id" : 1 } },
-          {"$skip" : page |1 }
+          { "$sort" : (sort) ? sort : { "_id" : 1 } }
         ];
+        console.log(arrayConsult);
         arrayCount = {};
         if(q){
           arrayConsult.push( {"$match":   JSON.parse(q) });
@@ -32,6 +32,7 @@ async function search  (req) {
     let  b ;
     await Store.aggregate(arrayConsult, (err, data)=>{
       if(err){return res.status(400).json({message:"Can not perform find operation.", error: err }); }
+      console.log(data);
       return b =  { 
         "data" : data,
         "page" : page | 1,
